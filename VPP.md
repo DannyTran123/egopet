@@ -12,7 +12,7 @@ The task consists of predicting $z_t$ from a (history) of images. We generate se
 For more information about the VPP task refer to our paper!
 
 ## Dataset Setup
-Download and extract CMS_data.tar.gz from the release section. 
+Download and extract CMS_data.tar.gz from from [here](https://drive.google.com/file/d/1ZKSWwCoZP1mHjpksIEAwh3sTeeSJNF3B/view?usp=sharing)
 
 ## Linear Probing
 
@@ -20,7 +20,7 @@ Run the following command to train a linear probing layer to predict the proprio
 
 ```
 DATA_PATH='./datasets/CMS/up_down_policy_data'
-LOOKHEAD=0.8
+LOOKHEAD=0.8 # in -1.5 -0.8 0 0.8 1.5
 MASTER_PORT=29500
 DATA_ROOT=${DATA_PATH}
 OUTPUT_DIR="./logs_dir/mvd_vit_base_with_vit_base_teacher_egopet/finetune_on_cms_lookahead_${LOOKHEAD}_8frames_update_freq_4"
@@ -47,6 +47,10 @@ OMP_NUM_THREADS=1 python3 -m torch.distributed.launch --nproc_per_node=8 --use_e
 ```
 
 ### Pretrained Models
-| Model             | Link |
-|-------------------|------|
-| MVD (ViT-B) |   [link](https://drive.google.com/file/d/1qnWmv4wGvdwp2PhdG_2wm5SettqSxy-P/view?usp=sharing)   |
+| Model             | Lookahead | Link |
+|-------------------|-----------|------|
+| MVD (ViT-B) | -1.5 |   [link](https://drive.google.com/file/d/12tO7LwjZ66voCTxp6lNcSaeLaU-9YlYE/view?usp=sharing)   |
+| MVD (ViT-B) | -0.8 |   [link](https://drive.google.com/file/d/135ndczYtWKF04ZNl-5zs_O6yTdLh5T7O/view?usp=sharing)   |
+| MVD (ViT-B) | 0 |   [link](https://drive.google.com/file/d/1r_8ZbJtuI_6ImFQFzjgIb1ERVBjq-eY-/view?usp=sharing)   |
+| MVD (ViT-B) | 0.8 |   [link](https://drive.google.com/file/d/1f78c-ascoWKa3_29rq-4NhCruidMsFoI/view?usp=sharing)   |
+| MVD (ViT-B) | 1.5 |   [link](https://drive.google.com/file/d/1BO5gzVs5TiNilRpF5OzuTtyVSjfMO33Z/view?usp=sharing)   |

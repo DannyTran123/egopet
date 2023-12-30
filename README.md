@@ -58,7 +58,7 @@ OMP_NUM_THREADS=1 python3 -m torch.distributed.launch --nproc_per_node=${GPUS} -
 ### Pretrained Models
 | Model             | Pretraining | Epochs | Link |
 |-------------------|-------------|--------|------|
-| MVD (ViT-B) | EgoPet    | 2670   |   [link](https://drive.google.com/file/d/1qnWmv4wGvdwp2PhdG_2wm5SettqSxy-P/view?usp=sharing)   |
+| MVD (ViT-B) | EgoPet    | 2670   |   [link](https://drive.google.com/file/d/1_Ky73DpjvSh5k4g-xhWE6QTndRlfUTHp/view?usp=sharing)   |
 
 ## Visual Interaction Prediction (VIP)
 

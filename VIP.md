@@ -59,22 +59,22 @@ As a sanity check, run evaluation using our MVD **fine-tuned** models:
 <th valign="bottom">MVD (EgoPet)</th>
 <!-- TABLE BODY -->
 <tr><td align="left">fine-tuned checkpoint</td>
-<td align="center"><a href="https://drive.google.com/file/d/1qnWmv4wGvdwp2PhdG_2wm5SettqSxy-P/view?usp=sharing">download</a></td>
+<td align="center"><a href="https://drive.google.com/file/d/1m9ssA4IGRRtwpymxob_8EEKDHGYZUZoh/view?usp=sharing">download</a></td>
 </tr>
 <tr><td align="left">reference Interaction accuracy</td>
-<td align="center">68.44</td>
+<td align="center">68.75</td>
 </tr>
 </tr>
 <tr><td align="left">reference Interaction AUROC</td>
-<td align="center">74.31</td>
+<td align="center">74.50</td>
 </tr>
 </tr>
 <tr><td align="left">reference Subject Prediction Top-1 accuracy</td>
-<td align="center">35.74</td>
+<td align="center">35.38</td>
 </tr>
 </tr>
 <tr><td align="left">reference Subject Prediction Top-3 accuracy</td>
-<td align="center">64.62</td>
+<td align="center">66.43</td>
 </tr>
 </tbody></table>
 
@@ -83,14 +83,14 @@ Evaluate VideoMAE/MVD on a single GPU (`{EGOPET_DIR}` is a directory containing 
 EGOPET_DIR='your_path/egopet/training_and_validation_test_set'
 CSV_PATH='csv/'
 FINETUNE_PATH='path/to/model'
-python run_object_interaction_mvd.py run_object_interaction_finetuning.py --num_workers 5 --model vit_base_patch16_224 --latent_dim 18 --data_path ${EGOPET_DIR} --csv_path ${CSV_PATH} --finetune ${FINETUNE_PATH} --input_size 224 --batch_size 64 --num_frames 8 --num_sec 2 --fps 4 --alpha 1 --eval
+python run_object_interaction_finetuning.py --num_workers 5 --model vit_base_patch16_224 --latent_dim 18 --data_path ${EGOPET_DIR} --csv_path ${CSV_PATH} --finetune ${FINETUNE_PATH} --input_size 224 --batch_size 64 --num_frames 8 --num_sec 2 --fps 4 --alpha 1 --eval
 ```
 Evaluating on MVD (EgoPet) should give:
 ```
-* loss 1.815
-* Acc@1_interaction 68.438 auroc_interaction 0.743
-* Acc@1_object 35.740 Acc@3_object 64.621 auroc_object 0.588
-Loss of the network on the 695 test images: 1.8%
+* loss 1.736
+* Acc@1_interaction 68.750 auroc_interaction 0.745
+* Acc@1_object 35.379 Acc@3_object 66.426 auroc_object 0.690
+Loss of the network on the 695 test images: 1.7%
 Min loss: 1.000%
 ```
 
