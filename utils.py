@@ -414,8 +414,9 @@ def cosine_scheduler(base_value, final_value, epochs, niter_per_ep, warmup_epoch
 
 
 def save_model(args, epoch, model, model_without_ddp, optimizer, loss_scaler, model_ema=None, save_numbered=False, obj_int=False):
+    epoch_name = 'checkpoint-{:05d}'.format(epoch)
     if obj_int:
-        checkpoint_path = "{}/checkpoint-{:05d}.pth".format(args.output_dir, epoch)
+        checkpoint_path = "{}/{}.pth".format(args.output_dir, epoch_name)
         latest_checkpoint_path = "{}/checkpoint.pth".format(args.output_dir)
         if save_numbered:
             curr_ckpt_path = checkpoint_path
@@ -423,9 +424,9 @@ def save_model(args, epoch, model, model_without_ddp, optimizer, loss_scaler, mo
             curr_ckpt_path = latest_checkpoint_path
     
     output_dir = Path(args.output_dir)
-    epoch_name = str(epoch)
+    
     if loss_scaler is not None:
-        checkpoint_paths = [output_dir / ('checkpoint-%s.pth' % epoch_name)]
+        checkpoint_paths = [output_dir / ('%s.pth' % epoch_name)]
         for checkpoint_path in checkpoint_paths:
             to_save = {
                 'model': model_without_ddp.state_dict(),
@@ -446,7 +447,7 @@ def save_model(args, epoch, model, model_without_ddp, optimizer, loss_scaler, mo
         client_state = {'epoch': epoch}
         if model_ema is not None:
             client_state['model_ema'] = get_state_dict(model_ema)
-        model.save_checkpoint(save_dir=args.output_dir, tag="checkpoint-%s" % epoch_name, client_state=client_state)
+        model.save_checkpoint(save_dir=args.output_dir, tag=epoch_name, client_state=client_state)
 
 
 def remove_key_in_checkpoint(checkpoint, remove_key_list=None):
