@@ -65,7 +65,8 @@ run_locomotion_prediction_finetuning.py \
 --path_to_trajectories_dir ${PATH_TO_TRAJECTORIES_DIR} \
 --num_pred 3 \
 --resume ${RESUME_PATH} \
---animals cat,dog --num_condition_frames 16 --num_pose_prediction 120 --pps 10 --fps 30 \ --scale_invariance dir \
+--animals cat,dog --num_condition_frames 16 --num_pose_prediction 120 --pps 10 --fps 30 \ 
+--scale_invariance dir \
 --dist_eval --eval
 ```
 Evaluating on MVD (EgoPet) should give:

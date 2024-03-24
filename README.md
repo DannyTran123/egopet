@@ -66,7 +66,7 @@ The fine-tuning instructions for the VIP task is in [VIP.md](VIP.md).
 
 ## Locomotion Prediction (LP)
 
-The fine-tuning instructions for the LP task is in [PL.md](PL.md).
+The fine-tuning instructions for the LP task is in [LP.md](LP.md).
 
 ## Vision to Proprioception Prediction (VPP)
 
