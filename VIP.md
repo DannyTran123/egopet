@@ -10,7 +10,7 @@ The beginning of an interaction is marked at the first time-step where the agent
 For more information about the VIP task refer to our paper! 
 
 ## Dataset Information
-`object_interaciton_train.csv` and `object_interaciton_validation.csv` are csv files in which every row represents a single training sample.
+`object_interaciton_train.csv` and `object_interaciton_validation.csv` are csv files in which every row represents a single training or validation sample.
 ![alt text](images/object_interaction_dataframe.png "")
 
 ### Columns documentation:

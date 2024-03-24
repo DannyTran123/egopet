@@ -1,4 +1,4 @@
-# EgoPet: A pet's-eye view of the world for learning animal behavior
+# EgoPet: Egomotion and Interaction Data from an Animal's Perspective
 ### [Amir Bar](https://amirbar.net), [Arya Bakhtiar](), [Antonio Loquercio](https://antonilo.github.io/), [Jathushan Rajasegaran](https://people.eecs.berkeley.edu/~jathushan/), [Danny Tran](), [Yann LeCun](https://yann.lecun.com/), [Amir Globerson](http://www.cs.tau.ac.il/~gamir/), [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/)
 <p align="center">
   <img src="images/teaser.png" width="750">
@@ -7,10 +7,10 @@
 This repository is the implementation of the pretraining and linear probing experiments in this paper.
 
 ## Abstract
-Animals are intelligent agents that exhibit various cognitive and behavioral traits. They plan and act to accomplish complex tasks, and they can interact with other agents or objects. Despite remarkable progress in AI, learning to understand the world as well as a cat remains a challenge. We argue that one major limitation towards achieving this goal is the lack of data. To address this, we introduce EgoPet, a new extensive dataset featuring over 84 hours of egocentric videos of animals, including dogs, cats, eagles, turtles, and others, sourced from YouTube and TikTok. Together with this dataset, we propose two tasks with annotated data: Visual Interaction Prediction (VIP) and Vision to Proprioception Prediction (VPP), aimed at both perception and action. Compared to other datasets, models pretrained on EgoPet perform better on VIP and VPP.
+Animals perceive the world to plan their actions and interact with other agents to accomplish complex tasks, demonstrating capabilities that are still unmatched by AI systems. To advance our understanding and reduce the gap between the capabilities of animals and AI systems, we introduce a dataset of pet egomotion imagery with diverse examples of simultaneous egomotion and multi-agent interaction. Current video datasets separately contain egomotion and interaction examples, but rarely both at the same time. In addition, EgoPet offers a radically distinct perspective from existing egocentric datasets of humans or vehicles.  We define two in-domain benchmark tasks that capture animal behavior, and a third benchmark to assess the utility of EgoPet as a pretraining resource to robotic quadruped locomotion, showing that models trained from EgoPet outperform those trained from prior datasets. This work provides evidence that today's pets could be a valuable resource for training future AI systems and robotic assistants.
 
 ## EgoPet Dataset
-Please follow the instructions in [DATASET.md](DATASET.md) for data preparation.
+Please follow the instructions at this github repo [here](https://github.com/bakhtiararya/EgoPet_dataset_download) for data preparation.
 
 ## Pre-training
 ### Installation
@@ -64,10 +64,14 @@ OMP_NUM_THREADS=1 python3 -m torch.distributed.launch --nproc_per_node=${GPUS} -
 
 The fine-tuning instructions for the VIP task is in [VIP.md](VIP.md).
 
+## Locomotion Prediction (LP)
+
+The fine-tuning instructions for the LP task is in [PL.md](PL.md).
+
 ## Vision to Proprioception Prediction (VPP)
 
 The fine-tuning instructions for the VPP task is in [VPP.md](VPP.md).
 
 ## Acknowledgements
 
-This project is built upon [MVD](https://github.com/ruiwang2021/mvd/tree/main) and [MAE_ST](https://github.com/facebookresearch/mae_st). Thank you to the contributors of these codebases!
+This project is built upon [MVD](https://github.com/ruiwang2021/mvd/tree/main), [MAE_ST](https://github.com/facebookresearch/mae_st), and [DPVO](https://github.com/princeton-vl/DPVO). Thank you to the contributors of these codebases!
