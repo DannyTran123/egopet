@@ -54,6 +54,7 @@ OMP_NUM_THREADS=1 python3 -m torch.distributed.launch --nproc_per_node=${GPUS} -
         --lr 1.5e-4 --min_lr 1e-4 --drop_path 0.1 --warmup_epochs 268 --epochs 2680 \
         --auto_resume
 ```
+We set `RANK` (`--node_rank`) as `0` on the first node. On other nodes, run the same command with `RANK=1`, ..., `RANK=3` respectively.  `--master_addr` is set as the ip of the node 0.
 
 ### Pretrained Models
 | Model             | Pretraining | Epochs | Link |

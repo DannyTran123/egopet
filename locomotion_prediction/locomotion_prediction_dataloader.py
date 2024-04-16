@@ -6,8 +6,6 @@ import random
 import math
 
 import torch
-from lietorch import SE3
-import lietorch
 import numpy as np
 import torch.utils.data
 from iopath.common.file_io import g_pathmgr as pathmgr
@@ -91,7 +89,7 @@ class Locomotion_Prediction_dataloader(torch.utils.data.Dataset):
         self._crop_size = crop_size
 
         self._num_frames = num_condition_frames
-        self._num_sec = math.ceil((num_condition_frames + num_pose_prediction) / fps) #double check logic
+        self._num_sec = math.ceil((num_condition_frames + num_pose_prediction) / fps)
         self._fps=fps
         self._pps = pps
         self._pose_skip = fps // pps

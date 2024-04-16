@@ -51,7 +51,7 @@ As a sanity check, run evaluation using our MVD **fine-tuned** models:
 Evaluate VideoMAE/MVD on a 1 node with 8 GPUs. (`{EGOPET_DIR}` is a directory containing `{training_set, validation_set}` sets of EgoPet, `{TRAIN_CSV}` is the path to the train csv to use. `{RESUME_PATH}` is the path to the model you want to evaluate.):
 ```
 EGOPET_DIR='your_path/egopet/training_and_validation_test_set'
-TRAIN_CSV='your_path/egopet/csv/locomotion_prediction_train_25.csv'
+TRAIN_CSV='locomotion_prediction_train_25.csv'
 RESUME_PATH='path/to/model/egopet_lp_linearprobing_vitb_checkpoint-00014.pth'
 OMP_NUM_THREADS=1 python3 -m torch.distributed.launch --master_port=29101 
 --nproc_per_node=8 --use_env \

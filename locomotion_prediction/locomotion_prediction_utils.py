@@ -6,8 +6,6 @@ import random
 import math
 
 import torch
-from lietorch import SE3
-import lietorch
 import numpy as np
 import torch.utils.data
 from iopath.common.file_io import g_pathmgr as pathmgr

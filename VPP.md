@@ -26,10 +26,10 @@ DATA_ROOT=${DATA_PATH}
 OUTPUT_DIR="./logs_dir/mvd_vit_base_with_vit_base_teacher_egopet/finetune_on_cms_lookahead_${LOOKHEAD}_8frames_update_freq_4"
 MODEL_PATH="./logs_dir/mvd_vit_base_with_vit_base_teacher_egopet/checkpoint-2669.pth"
 OMP_NUM_THREADS=1 python3 -m torch.distributed.launch --nproc_per_node=8 --use_env \
+    run_fs_domain_adaptation.py \
     --model vit_base_patch16_224 \
     --nb_classes 10 \
     --latent_dim 10 \
-    --job_dir ${OUTPUT_DIR} \
     --data_path ${DATA_PATH} \
     --data_root ${DATA_ROOT} \
     --finetune ${MODEL_PATH} \

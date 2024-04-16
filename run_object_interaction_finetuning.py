@@ -22,7 +22,6 @@ from utils import NativeScalerWithGradNormCount as NativeScaler
 from utils import multiple_samples_collate
 import utils as utils
 import modeling_finetune
-import wandb
 
 
 def get_args():
@@ -206,14 +205,6 @@ def main(args, ds_init=None):
     # random.seed(seed)
 
     cudnn.benchmark = True
-    os.environ["WANDB__SERVICE_WAIT"] = "300"
-    if utils.is_main_process():
-        wandb_config = vars(args)
-        wandb.init(
-            entity='unsupervised_analogies',
-            project='egopet_object_interaction',
-            config=wandb_config,
-        )
 
     model = create_model(
         args.model,
@@ -480,7 +471,6 @@ def main(args, ds_init=None):
                          'epoch': epoch,
                          'n_parameters': n_parameters}
         if args.output_dir and utils.is_main_process():
-            wandb.log(log_stats)
             if log_writer is not None:
                 log_writer.flush()
             with open(os.path.join(args.output_dir, "log.txt"), mode="a", encoding="utf-8") as f:
