@@ -1,4 +1,4 @@
-# EgoPet: Egomotion and Interaction Data from an Animal's Perspective
+# EgoPet: Egomotion and Interaction Data from an Animal's Perspective (ECCV 2022)
 ### [Amir Bar](https://amirbar.net), [Arya Bakhtiar](), [Antonio Loquercio](https://antonilo.github.io/), [Jathushan Rajasegaran](https://people.eecs.berkeley.edu/~jathushan/), [Danny Tran](), [Yann LeCun](https://yann.lecun.com/), [Amir Globerson](http://www.cs.tau.ac.il/~gamir/), [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/)
 <p align="center">
   <img src="images/teaser.png" width="750">
