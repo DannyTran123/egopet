@@ -10,7 +10,7 @@ This repository is the implementation of the pretraining and linear probing expe
 Animals perceive the world to plan their actions and interact with other agents to accomplish complex tasks, demonstrating capabilities that are still unmatched by AI systems. To advance our understanding and reduce the gap between the capabilities of animals and AI systems, we introduce a dataset of pet egomotion imagery with diverse examples of simultaneous egomotion and multi-agent interaction. Current video datasets separately contain egomotion and interaction examples, but rarely both at the same time. In addition, EgoPet offers a radically distinct perspective from existing egocentric datasets of humans or vehicles.  We define two in-domain benchmark tasks that capture animal behavior, and a third benchmark to assess the utility of EgoPet as a pretraining resource to robotic quadruped locomotion, showing that models trained from EgoPet outperform those trained from prior datasets. This work provides evidence that today's pets could be a valuable resource for training future AI systems and robotic assistants.
 
 ## EgoPet Dataset
-Please follow the instructions at this github repo [here](https://github.com/bakhtiararya/EgoPet_dataset_download) for data preparation.
+Install the data [here](https://huggingface.co/datasets/amirbar1/egopet).
 
 ## Pre-training
 ### Installation
